@@ -5,28 +5,29 @@
 ## 전체 아키텍처(개요)
 ```mermaid
 flowchart LR
-  subgraph Browser[Browser]
-    UI[React App (Vite + Tailwind)]
+  subgraph Browser
+    UI[React App - Vite and Tailwind]
   end
 
-  subgraph Frontend[Frontend]
-    ViteDev[Vite Dev Server (npm run dev)]
+  subgraph Frontend
+    ViteDev[Vite Dev Server - npm run dev]
   end
 
-  subgraph Backend[Backend]
-    Uvicorn[Uvicorn (FastAPI)]
+  subgraph Backend
+    Uvicorn[Uvicorn - FastAPI]
     RAG[RAG Service]
     RET[Retriever]
     ES[(Elasticsearch)]
     EMB[Embeddings]
-    LLM[OpenAI Chat (langchain-openai)]
+    LLM[OpenAI Chat - langchain openai]
   end
 
-  UI -->|HTTP (proxy: /pdf, /files)| ViteDev
+  UI -->|HTTP via proxy| ViteDev
   ViteDev -->|proxy| Uvicorn
   Uvicorn --> RAG --> RET --> ES
   RAG --> EMB
   RAG --> LLM
+
 ```
 
 ## 요청 흐름(상세)
