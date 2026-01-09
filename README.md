@@ -177,6 +177,6 @@ flowchart TD
   E --> F[질의 전송 → 백엔드 RAG → ES/LLM 호출]
   F --> G[응답/근거 확인]
 ```
-
-## 라이선스
-사내 사용 목적으로 가정. 필요 시 라이선스 명시를 추가하세요.
+## 추가 문서
+- 청킹 전략·데이터 분포 등 상세 보고서는 docs/rag-pipeline.md를 참고하세요:
+  - [docs/rag-pipeline.md](docs/rag-pipeline.md)
